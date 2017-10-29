@@ -1,0 +1,232 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+		<style>
+			body {
+				background:#e5dada;
+			}
+			input.inp3 {
+				width:175px;
+				height:175px;
+				opacity:1;
+				background-color:#e5dada;
+				border:2px solid #561313;
+				font-size:100px;
+				font-family: 'Comfortaa', cursive;
+			}
+			div.border {
+				background-color:#8c2b2b;
+				padding:40px;
+			}
+			input.i1{
+				border-top:none;
+				border-left:none;
+			}
+			input.i2{
+				border-top:none;
+				border-right:none;
+				border-left:none;
+			}
+			input.i3{
+				border-top:none;
+				border-right:none;
+			}
+			input.i4{
+				border-bottom:none;
+				border-left:none;
+				border-top:none;
+			}
+			input.i5{
+				border:none;
+			}
+			input.i6{
+				border-bottom:none;
+				border-right:none;
+				border-top:none;
+			}
+			input.i7{
+				border-bottom:none;
+				border-left:none;
+			}
+			input.i8{
+				border-bottom:none;
+				border-right:none;
+				border-left:none;
+			}
+			input.i9{
+				border-bottom:none;
+				border-right:none;
+			}
+			
+			table.table2 {
+				margin-top:27px;
+			}
+			input.inp1 {
+				border: 2px solid #7f5454;
+				width:60px;
+				padding:20px;
+				text-align:center;
+				border-right:none;
+				font-family: 'Passion One', cursive;
+				font-size:20px;
+			}
+			input.inp2 {
+				border: 2px solid #7f5454;
+				width:60px;
+				padding:20px;
+				text-align:center;
+				border-right:none;
+				font-family: 'Passion One', cursive;
+				font-size:20px;
+			}
+			input.btn {
+				padding:20px;
+				border:2px solid gray;
+				border-left:none;
+				background-color:#f4e8e8;
+				font-family: 'Passion One', cursive;
+				font-size:20px;
+			}
+		</style>
+		<script>
+			alert(" Vence quem alcançar 3 vitórias primeiro. Boa sorte!!!")
+			var cont_x = 0;
+			var cont_o = 0;
+			var cont_emp = 0;
+			var aux = 1;
+	
+		function Campo(campo) { 
+		
+			  var campoescolhido = document.getElementById(campo);
+			  
+			if ((campoescolhido.value != "O") && (campoescolhido.value !="X")) {
+				if (aux == 1) {
+					campoescolhido.value = "X";
+					document.getElementById("O").disabled = false;
+					document.getElementById("X").disabled = true;
+					aux = 2;}
+				else {
+					campoescolhido.value = "O"
+					document.getElementById("X").disabled = false;
+					document.getElementById("O").disabled = true;
+					aux = 1;}
+			 }
+		}
+		function apagar() {
+			var c1 = document.getElementById("1");
+			var c2 = document.getElementById("2");
+			var c3 = document.getElementById("3");
+			var c4 = document.getElementById("4");
+			var c5 = document.getElementById("5");
+			var c6 = document.getElementById("6");
+			var c7 = document.getElementById("7");
+			var c8 = document.getElementById("8");
+			var c9 = document.getElementById("9");
+			c1.value = "";
+			c2.value = "";
+			c3.value = "";
+			c4.value = "";
+			c5.value = "";
+			c6.value = "";
+			c7.value = "";
+			c8.value = "";
+			c9.value = "";
+		}
+		function verifica() {
+		
+			  var c1 = document.getElementById("1");
+			  var c2 = document.getElementById("2");
+			  var c3 = document.getElementById("3");
+			  var c4 = document.getElementById("4");
+			  var c5 = document.getElementById("5");
+			  var c6 = document.getElementById("6");
+			  var c7 = document.getElementById("7");
+			  var c8 = document.getElementById("8");
+			  var c9 = document.getElementById("9");	
+			  var emp = document.getElementById("empate");
+			  var j1 = document.getElementById("j1");
+			  var j2 = document.getElementById("j2");
+			
+			if (((c1.value == "O")||(c1.value == "X"))&&((c2.value == "O")||(c2.value == "X"))&&((c3.value == "O")||(c3.value == "X"))&&((c4.value == "O")||(c4.value == "X"))&&((c5.value == "O")||(c5.value == "X"))&&((c6.value == "O")||(c6.value == "X"))&&((c7.value == "O")||(c7.value == "X"))&&((c8.value == "O")||(c8.value == "X"))&&((c9.value == "O")||(c9.value == "X"))) {
+				alert("Deu velha!");
+				cont_emp += 1;
+				emp.value = cont_emp;
+				apagar();}
+				
+			if (((c1.value == "X") && (c2.value == "X") && (c3.value == "X"))||((c4.value == "X") && (c5.value == "X") && (c6.value == "X"))||((c7.value == "X") && (c8.value == "X") && (c9.value == "X"))||((c1.value == "X") && (c4.value == "X") && (c7.value == "X"))||((c2.value == "X") && (c5.value == "X") && (c8.value == "X"))||((c3.value == "X") && (c6.value == "X") && (c9.value == "X"))||((c1.value == "X") && (c5.value == "X") && (c9.value == "X"))||((c3.value == "X") && (c5.value == "X") && (c7.value == "X"))) {
+				cont_x += 1;
+				j1.value = cont_x;
+				apagar();}
+				
+			if (((c1.value == "O") && (c2.value == "O") && (c3.value == "O"))||((c4.value == "O") && (c5.value == "O") && (c6.value == "O"))||((c7.value == "O") && (c8.value == "O") && (c9.value == "O"))||((c1.value == "O") && (c4.value == "O") && (c7.value == "O"))||((c2.value == "O") && (c5.value == "O") && (c8.value == "O"))||((c3.value == "O") && (c6.value == "O") && (c9.value == "O"))||((c1.value == "O") && (c5.value == "O") && (c9.value == "O"))||((c3.value == "O") && (c5.value == "O") && (c7.value == "O"))) {
+				cont_o += 1;
+				j2.value = cont_o;
+				apagar();}
+
+			if (cont_x == 3) {
+				alert("Jogador 1 ganhou o jogo!");
+				end();}
+			if (cont_o == 3) {
+				alert("Jogador 2 ganhou o jogo!");
+				end();}
+		}
+		function end() {
+			var emp = document.getElementById("empate");
+			var j1 = document.getElementById("j1");
+			var j2 = document.getElementById("j2");
+			j1.value = 0;
+			emp.value = 0;
+			j2.value = 0;
+		}
+		</script>
+	</head>
+	<body>
+			<div class="border">
+				<center>
+					<div class="row">
+						<div class="col-sm-4">
+								<div class="input-group form-group">
+									<input type="text" id="j1" value="0" class="inp1" disabled>
+									<input type="button" id="X" value="Jogador 1 (X)" class="btn" disabled>
+								</div>
+						</div>
+						<div class="col-sm-4">
+								<div class="input-group form-group">
+									<input class="inp2" value="0" type="text" id="empate" disabled>
+									<input type="button" id="emp" value="Empates" class="btn" disabled>
+								</div>
+						</div>
+						<div class="col-sm-4">
+								<div class="input-group form-group">
+									<input class="inp1" value="0" type="text" id="j2" disabled>
+									<input type="button" id="O" value="Jogador 2 (O)" class="btn" disabled>
+								</div>
+						</div>
+					</div>
+				</center>
+			</div>
+			<center>
+			<table class="table2" style="align:center;" >
+				<tr>
+					<th><input value="" type="button" id="1" class="inp3 i1" onClick="Campo(1);verifica()"></input></th>
+					<th><input value="" type="button" id="2" class="inp3 i2" onClick="Campo(2);verifica()"></input></th>
+					<th><input value="" type="button" id="3" class="inp3 i3" onClick="Campo(3);verifica()"></input></th>
+				</tr>
+				<tr>
+					<th><input value="" type="button" id="4" class="inp3 i4" onClick="Campo(4);verifica()"></input></th>
+					<th><input value="" type="button" id="5" class="inp3 i5" onClick="Campo(5);verifica()"></input></th>
+					<th><input value="" type="button" id="6" class="inp3 i6" onClick="Campo(6);verifica()"></input></th>
+				</tr>
+				<tr>
+					<th><input value="" type="button" id="7" class="inp3 i7" onClick="Campo(7);verifica()"></input></th>
+					<th><input value="" type="button" id="8" class="inp3 i8" onClick="Campo(8);verifica()"></input></th>
+					<th><input value="" type="button" id="9" class="inp3 i9" onClick="Campo(9);verifica()"></input></th>
+				</tr>
+			</table>
+			</center>
+	</body>
+</html>
