@@ -1,0 +1,85 @@
+      body {
+				background:#e5dada;
+			}
+			input.inp3 {
+				width:250px;
+				height:250px;
+				opacity:1;
+				background-color:#e5dada;
+				border:2px solid #561313;
+				font-size:200px;
+				font-family: 'Comfortaa', cursive;
+			}
+			div.border {
+				background-color:#8c2b2b;
+				padding:40px;
+			}
+			input.i1{
+				border-top:none;
+				border-left:none;
+			}
+			input.i2{
+				border-top:none;
+				border-right:none;
+				border-left:none;
+			}
+			input.i3{
+				border-top:none;
+				border-right:none;
+			}
+			input.i4{
+				border-bottom:none;
+				border-left:none;
+				border-top:none;
+			}
+			input.i5{
+				border:none;
+			}
+			input.i6{
+				border-bottom:none;
+				border-right:none;
+				border-top:none;
+			}
+			input.i7{
+				border-bottom:none;
+				border-left:none;
+			}
+			input.i8{
+				border-bottom:none;
+				border-right:none;
+				border-left:none;
+			}
+			input.i9{
+				border-bottom:none;
+				border-right:none;
+			}
+			
+			table.table2 {
+				margin-top:27px;
+			}
+			input.inp1 {
+				border: 2px solid #7f5454;
+				width:60px;
+				padding:20px;
+				text-align:center;
+				border-right:none;
+				font-family: 'Passion One', cursive;
+				font-size:20px;
+			}
+			input.inp2 {
+				border: 2px solid #7f5454;
+				width:60px;
+				padding:20px;
+				text-align:center;
+				border-right:none;
+				font-family: 'Passion One', cursive;
+				font-size:20px;
+			}
+			input.btn {
+				padding:20px;
+				border:2px solid gray;
+				border-left:none;
+				background-color:#f4e8e8;
+				font-family: 'Passion One', cursive;
+				font-size:20px;
+			}
