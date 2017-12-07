@@ -10,12 +10,12 @@
 				background:#e5dada;
 			}
 			input.inp3 {
-				width:175px;
-				height:175px;
+				width:250px;
+				height:250px;
 				opacity:1;
 				background-color:#e5dada;
 				border:2px solid #561313;
-				font-size:100px;
+				font-size:200px;
 				font-family: 'Comfortaa', cursive;
 			}
 			div.border {
@@ -93,7 +93,6 @@
 			}
 		</style>
 		<script>
-			alert(" Vence quem alcançar 3 vitórias primeiro. Boa sorte!!!")
 			var cont_x = 0;
 			var cont_o = 0;
 			var cont_emp = 0;
@@ -137,7 +136,6 @@
 			c9.value = "";
 		}
 		function verifica() {
-		
 			  var c1 = document.getElementById("1");
 			  var c2 = document.getElementById("2");
 			  var c3 = document.getElementById("3");
@@ -150,38 +148,41 @@
 			  var emp = document.getElementById("empate");
 			  var j1 = document.getElementById("j1");
 			  var j2 = document.getElementById("j2");
+			  var x = document.getElementById("X");
+			  var o = document.getElementById("O");
+			
+				
+			if (((c1.value == "X") && (c2.value == "X") && (c3.value == "X"))||((c4.value == "X") && (c5.value == "X") && (c6.value == "X"))||((c7.value == "X") && (c8.value == "X") && (c9.value == "X"))||((c1.value == "X") && (c4.value == "X") && (c7.value == "X"))||((c2.value == "X") && (c5.value == "X") && (c8.value == "X"))||((c3.value == "X") && (c6.value == "X") && (c9.value == "X"))||((c1.value == "X") && (c5.value == "X") && (c9.value == "X"))||((c3.value == "X") && (c5.value == "X") && (c7.value == "X"))) {
+				cont_x += 1;
+				j1.value = cont_x;
+				if (x.value != ""){
+				alert(x.value + " " + "ganhou!")
+				apagar();}
+				else{
+				alert(" Jogador 1 ganhou!")
+				apagar();
+				}
+			}
+			if (((c1.value == "O") && (c2.value == "O") && (c3.value == "O"))||((c4.value == "O") && (c5.value == "O") && (c6.value == "O"))||((c7.value == "O") && (c8.value == "O") && (c9.value == "O"))||((c1.value == "O") && (c4.value == "O") && (c7.value == "O"))||((c2.value == "O") && (c5.value == "O") && (c8.value == "O"))||((c3.value == "O") && (c6.value == "O") && (c9.value == "O"))||((c1.value == "O") && (c5.value == "O") && (c9.value == "O"))||((c3.value == "O") && (c5.value == "O") && (c7.value == "O"))) {
+				cont_o += 1;
+				j2.value = cont_o;
+				if (o.value != ""){
+				alert(o.value + " " + "ganhou!")
+				apagar();}
+				else{
+				alert(" Jogador 2 ganhou!")
+				apagar();
+				}
+			}
 			
 			if (((c1.value == "O")||(c1.value == "X"))&&((c2.value == "O")||(c2.value == "X"))&&((c3.value == "O")||(c3.value == "X"))&&((c4.value == "O")||(c4.value == "X"))&&((c5.value == "O")||(c5.value == "X"))&&((c6.value == "O")||(c6.value == "X"))&&((c7.value == "O")||(c7.value == "X"))&&((c8.value == "O")||(c8.value == "X"))&&((c9.value == "O")||(c9.value == "X"))) {
 				alert("Deu velha!");
 				cont_emp += 1;
 				emp.value = cont_emp;
 				apagar();}
-				
-			if (((c1.value == "X") && (c2.value == "X") && (c3.value == "X"))||((c4.value == "X") && (c5.value == "X") && (c6.value == "X"))||((c7.value == "X") && (c8.value == "X") && (c9.value == "X"))||((c1.value == "X") && (c4.value == "X") && (c7.value == "X"))||((c2.value == "X") && (c5.value == "X") && (c8.value == "X"))||((c3.value == "X") && (c6.value == "X") && (c9.value == "X"))||((c1.value == "X") && (c5.value == "X") && (c9.value == "X"))||((c3.value == "X") && (c5.value == "X") && (c7.value == "X"))) {
-				cont_x += 1;
-				j1.value = cont_x;
-				apagar();}
-				
-			if (((c1.value == "O") && (c2.value == "O") && (c3.value == "O"))||((c4.value == "O") && (c5.value == "O") && (c6.value == "O"))||((c7.value == "O") && (c8.value == "O") && (c9.value == "O"))||((c1.value == "O") && (c4.value == "O") && (c7.value == "O"))||((c2.value == "O") && (c5.value == "O") && (c8.value == "O"))||((c3.value == "O") && (c6.value == "O") && (c9.value == "O"))||((c1.value == "O") && (c5.value == "O") && (c9.value == "O"))||((c3.value == "O") && (c5.value == "O") && (c7.value == "O"))) {
-				cont_o += 1;
-				j2.value = cont_o;
-				apagar();}
+		}
+		
 
-			if (cont_x == 3) {
-				alert("Jogador 1 ganhou o jogo!");
-				end();}
-			if (cont_o == 3) {
-				alert("Jogador 2 ganhou o jogo!");
-				end();}
-		}
-		function end() {
-			var emp = document.getElementById("empate");
-			var j1 = document.getElementById("j1");
-			var j2 = document.getElementById("j2");
-			j1.value = 0;
-			emp.value = 0;
-			j2.value = 0;
-		}
 		</script>
 	</head>
 	<body>
@@ -191,7 +192,7 @@
 						<div class="col-sm-4">
 								<div class="input-group form-group">
 									<input type="text" id="j1" value="0" class="inp1" disabled>
-									<input type="button" id="X" value="Jogador 1 (X)" class="btn" disabled>
+									<input type="text" id="X" value="" placeholder="Jogador 1 (X)" class="btn">
 								</div>
 						</div>
 						<div class="col-sm-4">
@@ -203,7 +204,7 @@
 						<div class="col-sm-4">
 								<div class="input-group form-group">
 									<input class="inp1" value="0" type="text" id="j2" disabled>
-									<input type="button" id="O" value="Jogador 2 (O)" class="btn" disabled>
+									<input type="text" id="O" value="" placeholder="Jogador 2 (O)" class="btn">
 								</div>
 						</div>
 					</div>
@@ -230,3 +231,5 @@
 			</center>
 	</body>
 </html>
+
+
